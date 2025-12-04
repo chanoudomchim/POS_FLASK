@@ -39,6 +39,7 @@ flask db upgrade
 gunicorn --bind 0.0.0.0:5000 app:app
 
 #### Create Services for Flask Gunicorn
+```
 sudo nano /etc/systemd/system/flask.service
 	[Unit]
 	Description = Flask App Service
@@ -55,7 +56,7 @@ sudo systemctl deamon-reload
 sudo systemctl enable flask.service
 sudo systemctl start flask.service
 sudo systemctl status flask.service
-
+```
 #### Configure Reverse Proxy with nginx + ssl
 nano /etc/nginx/site-avaiable/flask.conf
 	server {
