@@ -8,6 +8,9 @@
 	- Angular v20
 ------------------
 + Setting up
+#### install install app and dependencies
+sudo apt install nginx mysql-server python3 python3-pip python3-venv pkg-config default-libmysqlclient-dev build-essential -y 
+#### Configure Secure Mysql and Create user and DB in Mysql for flask 
 #### Create Virtual Environment
 ```
 python -m venv venv
