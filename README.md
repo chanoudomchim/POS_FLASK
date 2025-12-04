@@ -41,6 +41,7 @@ gunicorn --bind 0.0.0.0:5000 app:app
 #### Create Services for Flask Gunicorn
 ```
 sudo nano /etc/systemd/system/flask.service
+```
 	[Unit]
 	Description = Flask App Service
 	After=network.target
@@ -52,6 +53,7 @@ sudo nano /etc/systemd/system/flask.service
 	ExecStart=/home/ubuntu/POS_FLASK/venv/bin/gunicorn --bind 0.0.0.0:5000 app:app
 	[Install]
 	WantedBy=multi-user.target
+```
 sudo systemctl deamon-reload
 sudo systemctl enable flask.service
 sudo systemctl start flask.service
