@@ -1,3 +1,33 @@
+#### Project Diagram 
+```
+                         HTTP/HTTPS Request
++----------------+         (port 80/443)         +------------------+
+|                |  ---------------------------> |                  |
+|    CLIENT      |                                |      NGINX       |
+| (Browser/API)  |  <--------------------------- | (Reverse Proxy)  |
+|                |       HTTP/HTTPS Response     |                  |
++----------------+                                +---------+--------+
+                                                          |
+                                                          | Proxy to upstream
+                                                          | (e.g. http://127.0.0.1:8000)
+                                                          v
+                                                +---------+---------+
+                                                |                   |
+                                                |     GUNICORN      |
+                                                |  (WSGI Server)    |
+                                                |  Workers/Processes|
+                                                +---------+---------+
+                                                          |
+                                                          | WSGI call
+                                                          v
+                                                +---------+---------+
+                                                |                   |
+                                                |      FLASK        |
+                                                |   Application     |
+                                                |   (app.py)        |
+                                                +-------------------+
+
+```
 +++POS Project+++
 ------------------
 + API
