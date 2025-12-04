@@ -8,11 +8,11 @@
 	- Angular v20
 ------------------
 + Setting up
-#### install install app and dependencies
+#### ▶ install install app and dependencies
 ```
 sudo apt install nginx mysql-server python3 python3-pip python3-venv pkg-config default-libmysqlclient-dev build-essential -y
 ```
-#### Configure Secure Mysql and Create user and DB in Mysql for flask 
+#### ▶ Configure Secure Mysql and Create user and DB in Mysql for flask 
 ```
 	sudo mysql_secure_installation
 ```
@@ -38,10 +38,10 @@ flask db init
 flask db migrate -m "fresh migrate"
 flask db upgrade
 ```
-#### Test Flask Run with Gunicorn
+#### ▶ Test Flask Run with Gunicorn
 gunicorn --bind 0.0.0.0:5000 app:app
 
-#### Create Services for Flask Gunicorn
+#### ▶ Create Services for Flask Gunicorn
 ```
 sudo nano /etc/systemd/system/flask.service
 ```
@@ -62,7 +62,7 @@ sudo systemctl enable flask.service
 sudo systemctl start flask.service
 sudo systemctl status flask.service
 ```
-#### Configure Reverse Proxy with nginx + ssl
+#### ▶ Configure Reverse Proxy with nginx + ssl
 ```
 nano /etc/nginx/site-avaiable/flask.conf
 ```
@@ -85,7 +85,7 @@ sudo ln -s /etc/nginx/site-avaiable/flask.conf /etc/nginx/site-enable/flask.conf
 sudo nginx -t
 sudo systemctl restart nginx
 ```
-#### test Access 
+#### ▶ test Access 
 ```
 now you can access your flask app via https://your_dns_name_or_server_ip
 ex. https://flask.setecist.uk
