@@ -60,7 +60,9 @@ sudo systemctl start flask.service
 sudo systemctl status flask.service
 ```
 #### Configure Reverse Proxy with nginx + ssl
+```
 nano /etc/nginx/site-avaiable/flask.conf
+```
 	server {
 		listen 443 ssl;
 		server_name your_dns_name_or_server_ip;
@@ -74,12 +76,12 @@ nano /etc/nginx/site-avaiable/flask.conf
         	proxy_set_header X-Forwarded-Proto $scheme;
 		}
 	}
+```
 
----------------------------------------
 sudo ln -s /etc/nginx/site-avaiable/flask.conf /etc/nginx/site-enable/flask.conf
 sudo nginx -t
 sudo systemctl restart nginx
-
+```
 #### test Access 
 now you can access your flask app via https://your_dns_name_or_server_ip
 ex. https://flask.setecist.uk
