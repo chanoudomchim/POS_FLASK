@@ -9,10 +9,13 @@
 ------------------
 + Setting up
 #### install install app and dependencies
-sudo apt install nginx mysql-server python3 python3-pip python3-venv pkg-config default-libmysqlclient-dev build-essential -y 
+```
+sudo apt install nginx mysql-server python3 python3-pip python3-venv pkg-config default-libmysqlclient-dev build-essential -y
+```
 #### Configure Secure Mysql and Create user and DB in Mysql for flask 
+```
 	sudo mysql_secure_installation
-
+```
 #### Create Virtual Environment
 ```
 python -m venv venv
@@ -83,8 +86,9 @@ sudo nginx -t
 sudo systemctl restart nginx
 ```
 #### test Access 
+```
 now you can access your flask app via https://your_dns_name_or_server_ip
 ex. https://flask.setecist.uk
-
+```
 
 
