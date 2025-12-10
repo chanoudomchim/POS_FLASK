@@ -101,7 +101,7 @@ nano /etc/nginx/site-avaiable/flask.conf
 		server_name your_dns_name_or_server_ip;
 		ssl_certificate your_certificate_file_path;
 		ssl_certificate_key your_certificate_key_file_path;
-		localtion / {
+		location / {
 			proxy_pass http://127.0.0.1:5000;
 			proxy_set_header Host $host;
         	proxy_set_header X-Real-IP $remote_addr;
